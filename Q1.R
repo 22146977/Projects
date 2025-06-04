@@ -116,4 +116,4 @@ ggplot(showSum, aes(x = reorder(state, Average_Stars), y = Average_Stars, fill =
     y = "Average Stars Per State"
   )
 
-
+# Task 3: 
