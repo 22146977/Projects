@@ -191,4 +191,16 @@ library(lubridate) # Used For The Date
 library(knitr)
 library(kableExtra)
 
+# Upload Data Set and Read CSV Files
+users <- read.csv("~/Downloads/R Project/users.csv", stringsAsFactors = FALSE) # Users.csv
+businesses <- read.csv("~/Downloads/R Project/businesses.csv", stringsAsFactors = FALSE) # Businesses.csv
+reviews <- read.csv("~/Downloads/R Project/reviews.csv", stringsAsFactors = FALSE) # Reviews.csv
+
+# Clean User Data
+cleanUsers <- users %>%
+  filter(!is.na(member_since), !is.na(user_id)) %>%
+  mutate(
+    member_since = as.Date(member_since),
+    UsersGroup = ifelse(year(member_since) < 2020, "User Before 2020", "User 2020 and After")
+  )
 
