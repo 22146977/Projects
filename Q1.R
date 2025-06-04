@@ -137,6 +137,8 @@ cleanData <- reviews %>%
   inner_join(users %>% select(user_id), by = "user_id") %>% # Keeps actual users only
   filter(!is.na(state), !is.na(stars), !is.na(user_id)) # Filters NAs
 
+# Checks to see total users present in reviews
+cat("Total Amount of Rows in Reviews:", nrow(reviews))
 
 topUsers <- users %>%
   filter(!is.na(review_count), !is.na(user_id)) %>% # Filtering Data
