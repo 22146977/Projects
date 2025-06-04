@@ -35,22 +35,25 @@ SumUser <- cleanUsers %>%
     numUsers = n(), 
     avgStars = round(mean(average_stars, na.rm = TRUE), 2),
     avgReview = round(mean(review_count, na.rm = TRUE), 2)
-  ) %>%
+  )
   
   # Setting order the values are shown in
   SumUser$user_group <- factor(SumUser$user_group,
                                levels = c("Veteran", "Intermediate", "New"))
 
+# Checking if the table is displayed properly
+print(SumUser)
 
-# Plotting Values, and Styling them in a green colour
+
+# Plotting Values, and Styling them in a green color
 ggplot(SumUser, aes(x = user_group, y = avgStars, fill = user_group)) +
   geom_col( width = 0.8, color = "black") +
   theme_classic() +
-  # Manually choosing the colours set
+  # Choosing color to green
   scale_fill_manual(
     values = c("Veteran" = 'darkgreen',
                "Intermediate" = 'darkolivegreen',
-               "New" = 'darkseagreen'))
+               "New" = 'darkseagreen')) +
 
 # Labeling the Graph
 labs(
