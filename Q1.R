@@ -87,5 +87,12 @@ cleanData <- reviews %>%
 # Display Table
 showSum <- cleanData %>%
   group_by(state) %>%
+  # Table headings and calculations
+  summarise (
+    Average_Stars = round(mean(stars), 2),
+    Total_Reviews = n(),
+    Unique_Users = n_distinct(user_id)
+  ) %>% 
+  arrange(desc(Average_Stars))
 
 
