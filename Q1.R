@@ -5,3 +5,6 @@ library(ggplot2) # Used For Plotting Data
 library(lubridate) # Used For The Date
 library(knitr)
 library(kableExtra)
+
+# Read Users Data Csv File
+users <- read.csv("~/Downloads/R Project/users.csv"
