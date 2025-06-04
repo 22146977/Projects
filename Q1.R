@@ -29,3 +29,8 @@ SumUser <- cleanUsers %>%
     avgStars = round(mean(average_stars, na.rm = TRUE), 2),
     avgReview = round(mean(review_count, na.rm = TRUE), 2)
   ) %>%
+  
+  # Setting order the values are shown in
+  SumUser$user_group <- factor(SumUser$user_group,
+                               levels = c("Veteran", "Intermediate", "New"))
+
