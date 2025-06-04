@@ -21,3 +21,9 @@ cleanUsers <- users %>%
     year(member_since) >= 2017 & year(member_since) <= 2022 ~ "Intermediate", # between 2017 and 2022, Intermediate
     year(member_since) > 2022 ~ "New" # After 2022 New
   ))
+
+SumUser <- cleanUsers %>%
+  group_by(user_group) %>%
+  summarise(
+    numUsers = n(), 
+    avgStars = round(mean(average_stars, na.rm = TRUE), 2),
