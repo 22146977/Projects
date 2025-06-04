@@ -149,6 +149,9 @@ topReviews <- reviews %>%
   filter(!is.na(user_id), !is.na(stars)) %>% # Filtering Data
   inner_join(topUsers, by = "user_id")
 
+# Check the new number of rows in reviews after filtering the data
+cat("New Amount of Rows in Reviews:", nrow(topReviews))
+
 UserSum <- topReviews %>%
   group_by(user_id) %>%
   summarise(
