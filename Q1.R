@@ -65,3 +65,11 @@ labs(
   theme(legend.position = "bottom") # The legend is at the bottom of the page
 
 # Task 2: Average star reviews per state in the US
+
+# Import Libraries
+library(dplyr) # For Manipulating Data
+library(ggplot2) # Used For Plotting Data
+library(lubridate) # Used For The Date
+library(knitr)
+library(kableExtra)
+
