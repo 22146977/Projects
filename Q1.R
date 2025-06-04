@@ -116,4 +116,11 @@ ggplot(showSum, aes(x = reorder(state, Average_Stars), y = Average_Stars, fill =
     y = "Average Stars Per State"
   )
 
-# Task 3: 
+# Task 3: Top 10 users
+
+# Upload Library
+library(dplyr) # For Manipulating Data
+library(ggplot2) # Used For Plotting Data
+library(lubridate) # Used For The Date
+library(knitr)
+library(kableExtra)
