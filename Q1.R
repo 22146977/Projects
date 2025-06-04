@@ -140,11 +140,13 @@ cleanData <- reviews %>%
 # Checks to see total users present in reviews
 cat("Total Amount of Rows in Reviews:", nrow(reviews))
 
+# Filtering Data for Total amount of reviews
 topUsers <- users %>%
   filter(!is.na(review_count), !is.na(user_id)) %>% # Filtering Data
   arrange(desc(review_count)) %>% # Arranging order Descending
   slice_head(n = 10)
 
+# Total Reviews
 topReviews <- reviews %>%
   filter(!is.na(user_id), !is.na(stars)) %>% # Filtering Data
   inner_join(topUsers, by = "user_id")
