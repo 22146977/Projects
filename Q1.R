@@ -95,4 +95,13 @@ showSum <- cleanData %>%
   ) %>% 
   arrange(desc(Average_Stars)) # Setting Average_stars to a descending order
 
+# Print Table
+showSum %>%
+  kbl(caption="The Average Review Stars by State") %>% # Title
+  kable_styling(bootstrap_options = 
+                  c( "striped", "hover", "condensed", 
+                     full_width = FALSE
+                  )
+  )
+
 
