@@ -160,7 +160,18 @@ UserSum <- topReviews %>%
 UserSum %>%
   kbl(caption=" The Average Review Stars of The Top 10 Users") %>% # Title
   kable_styling(bootstrap_options = c( "striped", "hover", "condensed", 
-                                       full_width = FALSE
+                                       full_width = FALSE)
   )
-  )
+
+# Visualise Data
+# Plot Data
+ggplot(topReviews, aes(x = reorder(user_id, stars, FUN = median), y = stars, fill = user_id)) +
+  geom_boxplot(show.legend = FALSE) +
+  coord_flip() +
+  theme_classic() +
+  labs(
+    title = "The Average Review Stars of The Top 10 Users",
+    x = "User ID",
+    y = "Star Rating"
+  ) 
 
