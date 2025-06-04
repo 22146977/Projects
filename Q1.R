@@ -226,3 +226,21 @@ UserSummary %>%
                   c( "striped", "hover", "condensed", full_width = FALSE)
   )
 
+# Plotting Data
+# Visualise Data by plotting it
+ggplot(DataReview, aes(x = UsersGroup, y = reviewLength, fill = UsersGroup)) +
+  geom_boxplot(show.legend = FALSE) +
+  theme_classic() +
+  # Setting Titles and defining names of X and Y values
+  labs(
+    title = "The Difference of Review Behaviour of Users Who have Joined Before and After 2020", # Title
+    x = "Users Group",
+    y = "Review the Lenght of the Characters"
+  ) +
+  # Setting Colors of table to green theme
+  scale_fill_manual(
+    values = c("User Before 2020" = 'darkolivegreen',
+               "User 2020 and After" = 'darkseagreen'
+    )
+  ) 
+
