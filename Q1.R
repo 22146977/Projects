@@ -184,5 +184,11 @@ ggplot(topReviews, aes(x = reorder(user_id, stars, FUN = median), y = stars, fil
 
 # Task 4: Difference in user behavior before and after 2020
 
+# Upload Library
+library(dplyr) # For Manipulating Data
+library(ggplot2) # Used For Plotting Data
+library(lubridate) # Used For The Date
+library(knitr)
+library(kableExtra)
 
 
