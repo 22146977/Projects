@@ -168,7 +168,7 @@ UserSum %>%
   kbl(caption=" The Average Review Stars of The Top 10 Users") %>% # Title
   kable_styling(bootstrap_options = c( "striped", "hover", "condensed", 
                                        full_width = FALSE)
-  )
+                )
 
 # Visualise Data
 # Plot Data
