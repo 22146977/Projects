@@ -219,3 +219,10 @@ UserSummary <- DataReview %>%
     AvgReviewLth = round(mean(reviewLength, na.rm = TRUE), 2)
   )
 
+# Show Table Summary
+UserSummary %>%
+  kbl(caption="Analysing Users Behaviour, Before 2020 and After 2020") %>% # Title # Using KBL
+  kable_styling(bootstrap_options = 
+                  c( "striped", "hover", "condensed", full_width = FALSE)
+  )
+
