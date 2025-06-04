@@ -104,7 +104,6 @@ showSum %>%
                   )
   )
 
-
 # Visualise Data
 # Plot Data
 ggplot(showSum, aes(x = reorder(state, Average_Stars), y = Average_Stars, fill = state)) +
