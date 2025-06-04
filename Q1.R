@@ -210,3 +210,12 @@ DataReview <- reviews %>%
   mutate(reviewLength = nchar(text)) %>%
   inner_join(cleanUsers %>% select(user_id, UsersGroup), by = "user_id") # Merging Data
 
+# Summarising Data and calculations
+UserSummary <- DataReview %>%
+  group_by(UsersGroup) %>%
+  summarise(
+    TotalReviews = n(),
+    avgStars = round(mean(stars, na.rm = TRUE), 2),
+    AvgReviewLth = round(mean(reviewLength, na.rm = TRUE), 2)
+  )
+
