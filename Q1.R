@@ -182,3 +182,7 @@ ggplot(topReviews, aes(x = reorder(user_id, stars, FUN = median), y = stars, fil
     y = "Star Rating"
   ) 
 
+# Task 4: Difference in user behavior before and after 2020
+
+
+
