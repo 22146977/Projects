@@ -1,4 +1,4 @@
-## Task 1: Average Stars using memeber_since Date
+## Task 1: Average Stars using member_since Date
 # Upload Libraries
 library(dplyr) # For Manipulating Data
 library(ggplot2) # Used For Plotting Data
