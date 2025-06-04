@@ -146,3 +146,21 @@ topUsers <- users %>%
 topReviews <- reviews %>%
   filter(!is.na(user_id), !is.na(stars)) %>% # Filtering Data
   inner_join(topUsers, by = "user_id")
+
+UserSum <- topReviews %>%
+  group_by(user_id) %>%
+  summarise(
+    TotReviews = n(),
+    avgStars = round(mean(stars, na.rm = TRUE), 2)
+  ) %>%
+  arrange(desc(TotReviews)) 
+
+
+# Show Summary Table
+UserSum %>%
+  kbl(caption=" The Average Review Stars of The Top 10 Users") %>% # Title
+  kable_styling(bootstrap_options = c( "striped", "hover", "condensed", 
+                                       full_width = FALSE
+  )
+  )
+
