@@ -63,3 +63,5 @@ labs(
 ) +
 
   theme(legend.position = "bottom") # The legend is at the bottom of the page
+
+#Task 2
