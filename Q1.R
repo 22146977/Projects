@@ -34,3 +34,14 @@ SumUser <- cleanUsers %>%
   SumUser$user_group <- factor(SumUser$user_group,
                                levels = c("Veteran", "Intermediate", "New"))
 
+
+# Plotting Values, and Styling them in a green colour
+ggplot(SumUser, aes(x = user_group, y = avgStars, fill = user_group)) +
+  geom_col( width = 0.8, color = "black") +
+  theme_classic() +
+  # Manually choosing the colours set
+  scale_fill_manual(
+    values = c("Veteran" = 'darkgreen',
+               "Intermediate" = 'darkolivegreen',
+               "New" = 'darkseagreen'))
+
