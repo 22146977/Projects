@@ -105,3 +105,16 @@ showSum %>%
   )
 
 
+# Visualise Data
+# Plot Data
+ggplot(showSum, aes(x = reorder(state, Average_Stars), y = Average_Stars, fill = state)) +
+  geom_col(show.legend = FALSE) +
+  coord_flip() +
+  theme_classic() +
+  labs(
+    title = "The Average Review Stars by State",
+    x = "State",
+    y = "Average Stars Per State"
+  )
+
+
