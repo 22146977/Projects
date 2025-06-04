@@ -51,3 +51,5 @@ labs(
   x = "User Groups",
   y = "Average Amount of Stars"
 ) +
+
+  theme(legend.position = "bottom") # The legend is at the bottom of the page
