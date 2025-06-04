@@ -137,11 +137,12 @@ cleanData <- reviews %>%
   inner_join(users %>% select(user_id), by = "user_id") %>% # Keeps actual users only
   filter(!is.na(state), !is.na(stars), !is.na(user_id)) # Filters NAs
 
+
 topUsers <- users %>%
-  filter(!is.na(review_count), !is.na(user_id)) %>%
-  arrange(desc(review_count)) %>%
+  filter(!is.na(review_count), !is.na(user_id)) %>% # Filtering Data
+  arrange(desc(review_count)) %>% # Arranging order Descending
   slice_head(n = 10)
 
 topReviews <- reviews %>%
-  filter(!is.na(user_id), !is.na(stars)) %>%
+  filter(!is.na(user_id), !is.na(stars)) %>% # Filtering Data
   inner_join(topUsers, by = "user_id")
