@@ -25,6 +25,10 @@ cleanUsers <- users %>%
 # Testing new total rows after NA values were removed
 cat("New Total Row Amount:", nrow(cleanUsers))
 
+# Testing if Headings were assigned correctly 
+# Testing if table display groups and dates correctly
+head(cleanUsers %>% select(user_id, member_since, user_group))
+
 SumUser <- cleanUsers %>%
   group_by(user_group) %>%
   summarise(
