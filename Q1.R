@@ -124,3 +124,15 @@ library(ggplot2) # Used For Plotting Data
 library(lubridate) # Used For The Date
 library(knitr)
 library(kableExtra)
+
+# Upload Data Set
+# Read Csv Files
+users <- read.csv("~/Downloads/R Project/users.csv", stringsAsFactors = FALSE) # Users.csv
+businesses <- read.csv("~/Downloads/R Project/businesses.csv", stringsAsFactors = FALSE) # Businesses.csv
+reviews <- read.csv("~/Downloads/R Project/reviews.csv", stringsAsFactors = FALSE) # Reviews.csv
+
+# Merging data from CSV files
+cleanData <- reviews %>%
+  inner_join(businesses %>% select(business_id, state), by = "business_id") %>% # State
+  inner_join(users %>% select(user_id), by = "user_id") %>% # Keeps actual users only
+  filter(!is.na(state), !is.na(stars), !is.na(user_id)) # Filters NAs
