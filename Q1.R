@@ -7,4 +7,4 @@ library(knitr)
 library(kableExtra)
 
 # Read Users Data Csv File
-users <- read.csv("~/Downloads/R Project/users.csv"
+users <- read.csv("~/Downloads/R Project/users.csv", stringsAsFactors = FALSE)
