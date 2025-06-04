@@ -93,6 +93,6 @@ showSum <- cleanData %>%
     Total_Reviews = n(),
     Unique_Users = n_distinct(user_id)
   ) %>% 
-  arrange(desc(Average_Stars))
+  arrange(desc(Average_Stars)) # Setting Average_stars to a descending order
 
 
