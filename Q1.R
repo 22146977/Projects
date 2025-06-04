@@ -80,4 +80,7 @@ reviews <- read.csv("~/Downloads/R Project/reviews.csv", stringsAsFactors = FALS
 
 # Merging data from CSV files
 cleanData <- reviews %>%
+  inner_join(businesses %>% select(business_id, state), by = "business_id") %>% # State
+  inner_join(users %>% select(user_id), by = "user_id") %>% # Keeps actual users only
+  filter(!is.na(state), !is.na(stars), !is.na(user_id)) # Filters NAs
 
