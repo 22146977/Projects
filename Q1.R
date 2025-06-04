@@ -84,3 +84,8 @@ cleanData <- reviews %>%
   inner_join(users %>% select(user_id), by = "user_id") %>% # Keeps actual users only
   filter(!is.na(state), !is.na(stars), !is.na(user_id)) # Filters NAs
 
+# Display Table
+showSum <- cleanData %>%
+  group_by(state) %>%
+
+
