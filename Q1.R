@@ -22,6 +22,9 @@ cleanUsers <- users %>%
     year(member_since) > 2022 ~ "New" # After 2022 New
   ))
 
+# Testing new total rows after NA values were removed
+cat("New Total Row Amount:", nrow(cleanUsers))
+
 SumUser <- cleanUsers %>%
   group_by(user_group) %>%
   summarise(
