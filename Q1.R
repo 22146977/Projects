@@ -198,9 +198,15 @@ reviews <- read.csv("~/Downloads/R Project/reviews.csv", stringsAsFactors = FALS
 
 # Clean User Data
 cleanUsers <- users %>%
-  filter(!is.na(member_since), !is.na(user_id)) %>%
+  filter(!is.na(member_since), !is.na(user_id)) %>% # Filtering Data
   mutate(
     member_since = as.Date(member_since),
-    UsersGroup = ifelse(year(member_since) < 2020, "User Before 2020", "User 2020 and After")
+    UsersGroup = ifelse(year(member_since) < 2020, "User Before 2020", "User 2020 and After") # Grouping Data
   )
+
+# Combine Reviews and Show Review Length
+DataReview <- reviews %>%
+  filter(!is.na(user_id), !is.na(stars), !is.na(text)) %>% # Filtering NAs from data
+  mutate(reviewLength = nchar(text)) %>%
+  inner_join(cleanUsers %>% select(user_id, UsersGroup), by = "user_id") # Merging Data
 
