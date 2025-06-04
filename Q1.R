@@ -27,3 +27,5 @@ SumUser <- cleanUsers %>%
   summarise(
     numUsers = n(), 
     avgStars = round(mean(average_stars, na.rm = TRUE), 2),
+    avgReview = round(mean(review_count, na.rm = TRUE), 2)
+  ) %>%
