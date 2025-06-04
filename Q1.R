@@ -45,3 +45,9 @@ ggplot(SumUser, aes(x = user_group, y = avgStars, fill = user_group)) +
                "Intermediate" = 'darkolivegreen',
                "New" = 'darkseagreen'))
 
+# Labeling the Graph
+labs(
+  title = "Average Review Stars by User Age Group",
+  x = "User Groups",
+  y = "Average Amount of Stars"
+) +
