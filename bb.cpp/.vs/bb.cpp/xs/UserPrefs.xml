@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{D4D0FF2E-A9FF-4A9F-88A2-FD9E5E7E4FED}|Default">
+  <MonoDevelop.Ide.ItemProperties.bb.cpp PreferredExecutionTarget="/Applications/CryptoTab Browser.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="bb.cpp" expanded="True">
+            <Node name="bb.cpp" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
