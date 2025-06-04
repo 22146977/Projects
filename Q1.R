@@ -74,5 +74,10 @@ library(knitr)
 library(kableExtra)
 
 # Upload Files
+users <- read.csv("~/Downloads/R Project/users.csv", stringsAsFactors = FALSE)
+businesses <- read.csv("~/Downloads/R Project/businesses.csv", stringsAsFactors = FALSE)
+reviews <- read.csv("~/Downloads/R Project/reviews.csv", stringsAsFactors = FALSE)
 
+# Merging data from CSV files
+cleanData <- reviews %>%
 
