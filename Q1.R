@@ -14,3 +14,10 @@ cleanUsers <- users %>%
   mutate(member_since = as.Date(member_since)) %>%
   # Filtering out rows with missing values
   filter(!is.na(member_since), !is.na(review_count), !is.na(average_stars)) %>%
+  
+  # Setting member since groups names and conditions
+  mutate(user_group = case_when(
+    year(member_since) < 2017 ~ "Veteran", # Before 2017 Veteran
+    year(member_since) >= 2017 & year(member_since) <= 2022 ~ "Intermediate", # between 2017 and 2022, Intermediate
+    year(member_since) > 2022 ~ "New" # After 2022 New
+  ))
